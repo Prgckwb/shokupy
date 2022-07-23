@@ -1,7 +1,8 @@
 import datetime
+import re
 import textwrap
 
-from shokupy.utils import MenuString
+from shokupy.string import MenuString
 
 
 class ShokujinMenu:
@@ -30,9 +31,16 @@ class ShokujinMenu:
         return textwrap.dedent(text)
 
     # メニュー名、説明に指定した文字列を含むかどうか
-    def contains(self, word: str) -> bool:
-        is_name = word in self.name
-        is_description = word in self.description
+    # TODO: 正規表現検索を修正
+    def contains(self, word: str, is_regex) -> bool:
+        if is_regex:
+            r = re.compile(word)
+            is_name = bool(re.search(r, self.name))
+            is_description = bool(re.search(r, self.name))
+        else:
+            is_name = word in self.name
+            is_description = word in self.description
+
         return is_name or is_description
 
     # 現在注文可能かどうか
@@ -49,3 +57,7 @@ class ShokujinMenu:
                 return True
 
         return False
+
+
+if __name__ == '__main__':
+    pass

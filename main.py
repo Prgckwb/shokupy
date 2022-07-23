@@ -2,16 +2,21 @@ import shokupy as sp
 
 
 def main():
-    word = "2番"
+    word = "春雨"
 
     menus = sp.get_all_menus()
     results = sp.search(menus, word)
 
-    uma_ni = results[0]
-    print(uma_ni)
+    sp.menu_description(results)
 
-    print(uma_ni.is_available())
+
+def play():
+    j_data = sp.get_json(sp.Endpoint.joke)
+    data = sp.dict2menu(j_data)
+
+    print(data)
 
 
 if __name__ == '__main__':
-    main()
+    # main()
+    play()
