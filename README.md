@@ -2,7 +2,7 @@
 
 [食神API](https://github.com/shokujinjp/api)の非公式PythonSDK
 
-絶賛開発中なので、使用が度々変わります。
+絶賛開発中なので、仕様が度々変わります。
 
 欲しい機能案がありましたらissueに投げてください。
 
