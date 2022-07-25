@@ -50,10 +50,12 @@ def get_json_str(url, is_formatted=False, indent=4, ensure_ascii=False):
 
 
 # TODO: 正規表現検索がうまくいってない
+# TODO: exclude引数を実装 (リストで渡して、検索結果から除外)
 def search(target_menus: list[ShokujinMenu],
            menu_name: str,
            min_price: int = 0,
            max_price: int = 99999,
+           exclude: list[str] = None,
            is_regex: bool = False) -> list[ShokujinMenu]:
     assert min_price <= max_price
 
@@ -63,6 +65,8 @@ def search(target_menus: list[ShokujinMenu],
         in_budget = min_price <= menu.price <= max_price
         if menu.contains(menu_name, is_regex) and in_budget:
             menus.append(menu)
+
+    # TODO: exclude処理
 
     return menus
 
