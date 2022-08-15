@@ -15,7 +15,7 @@ class MenuString:
 
 @dataclasses.dataclass
 class Endpoint:
-    base = r"https://api.shokujin.jp"
-    menu_all = rf"{base}/menu/all"
-    menu_today = rf"{base}/menu/today"
-    joke = rf"{base}/joke/markov"
+    BASE = r"https://api.shokujin.jp"
+    MENU_ALL = rf"{BASE}/menu/all"
+    MENU_TODAY = rf"{BASE}/menu/today"
+    JOKE = rf"{BASE}/joke/markov"

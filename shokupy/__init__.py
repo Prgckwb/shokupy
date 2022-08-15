@@ -23,9 +23,9 @@ def dict2menu(json_menu: dict):
 
 def get_all_menus(only_available: bool = False) -> list[ShokujinMenu]:
     if only_available:
-        json_menus = requests.get(Endpoint.menu_today).json()
+        json_menus = requests.get(Endpoint.MENU_TODAY).json()
     else:
-        json_menus = requests.get(Endpoint.menu_all).json()
+        json_menus = requests.get(Endpoint.MENU_ALL).json()
 
     menus = []
     for json_menu in json_menus:

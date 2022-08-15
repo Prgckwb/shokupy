@@ -43,10 +43,11 @@ sp.menu_description(results)
 豚肉ともやしと春雨のピリ辛炒め定食: 650円
 ```
 ### jsonを取得して存在しないメニューを生成
+
 ```python
 import shokupy as sp
 
-j_data = sp.get_json(sp.Endpoint.joke)
+j_data = sp.get_json(sp.Endpoint.JOKE)
 data = sp.dict2menu(j_data)
 
 print(data)
